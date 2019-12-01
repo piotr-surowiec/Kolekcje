@@ -22,7 +22,7 @@ public class PocztaTest {
 
     public void zamianaNieIstniejacegoProduktu(){
         poczta.zamienProdukt(brama, panel);
-        System.out.println("III test: \n" + poczta);
+        System.out.println("III test: \n" + poczta +'\n');
     }
 
 
