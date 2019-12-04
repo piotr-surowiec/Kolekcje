@@ -8,6 +8,7 @@ public class PocztaTest {
     Produkt brama = new Produkt("brama wjazdowa", 100);
 
     private Poczta poczta = new Poczta();
+    private Poczta pocztaVany = new Poczta();
 
     public void dodanieProduktu(){
         poczta.dodajProdukt(drzwi);
@@ -25,6 +26,15 @@ public class PocztaTest {
         System.out.println("III test: \n" + poczta +'\n');
     }
 
+    public void podzialNaVany(){
+        pocztaVany.dodajProdukt(drzwi);
+        pocztaVany.dodajProdukt(okno);
+        pocztaVany.dodajProdukt(panel);
+        pocztaVany.dodajProdukt(brama);
+
+        pocztaVany.przygotujPrzesylke();
+        System.out.println("IV test: \n" + "Produkty w małym Vanie: " + pocztaVany.getMalyVanProdukty() + "\nProdukty w dużym Vanie: " + pocztaVany.getDuzyVanProdukty());
+    }
 
     public static void main(String[] args) {
 
@@ -33,6 +43,8 @@ public class PocztaTest {
         pocztaTest.zamianaProduktow();
         pocztaTest.zamianaNieIstniejacegoProduktu();
 
+        PocztaTest pocztaTestVany = new PocztaTest();
+        pocztaTestVany.podzialNaVany();
     }
 
 }

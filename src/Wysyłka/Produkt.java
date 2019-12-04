@@ -1,5 +1,6 @@
 package Wysyłka;
 
+import java.util.Comparator;
 import java.util.Objects;
 
 public class Produkt {
@@ -11,6 +12,7 @@ public class Produkt {
         this.nazwa = nazwa;
         this.waga = waga;
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -46,4 +48,14 @@ public class Produkt {
     public void setWaga(int waga) {
         this.waga = waga;
     }
+
+    public static final Comparator<Produkt> BY_WAGA =
+        new Comparator<Produkt>() {
+            @Override
+            public int compare(Produkt p1, Produkt p2) {
+                return Integer.compare(p1.getWaga(), p2.getWaga());
+            }
+        };
 }
+
+
